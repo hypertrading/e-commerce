@@ -1,7 +1,7 @@
 <?php
-function query_get_one_user($db, $firstname, $lastname)
+function query_get_one_user($db, $login)
 {
-    $query = "SELECT * FROM `users` WHERE lastname =".$lastname." AND firstname=".$firstname;
+    $query = "SELECT * FROM `users` WHERE login =".$login;
     $user = mysqli_query($db, $query);
     return $user;
 }
