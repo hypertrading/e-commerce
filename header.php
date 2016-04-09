@@ -8,6 +8,7 @@ include "functions.php";
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>Rent a Student</title>
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -15,7 +16,7 @@ include "functions.php";
     <div class="head">
         <img class="logo" src="assets/img/logo_rent.jpg">
         <button><a href="#">Log-in</a></button>
-        <button><a href="#">Register</a></button>
+        <a href="register.php"><button>Register</button></a>
         <div class="panier">
             <a href="#"><img class="logo-panier" src="assets/img/panier.png"></a>
             <p>3 students</p>
