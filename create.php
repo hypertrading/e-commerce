@@ -5,7 +5,7 @@ if ($_POST[submit] != "OK" || $_POST[login] == "" || $_POST[passwd] == "")
 	$return = "ERROR CREATE_USER (form empty or partially)\n";
 else
 {
-	if (check_form($_POST[login]) == FALSE || check_form($_POST[passwd]) == FALSE)
+	if ((check_form($_POST[login]) == FALSE) || (check_form($_POST[passwd]) == FALSE))
 		$return = "Wrong Format\n";
 	else
 	{
