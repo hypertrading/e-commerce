@@ -1,6 +1,10 @@
 <?php
 session_start();
 include "functions.php";
+if ($_SESSION['nbr_item'] == NULL)
+    $item = "Panier vide";
+else
+    $item = $_SESSION['nbr_item'];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -18,9 +22,9 @@ include "functions.php";
         <button><a href="#">Log-in</a></button>
         <a href="register.php"><button>Register</button></a>
         <div class="panier">
-            <a href="#"><img class="logo-panier" src="assets/img/panier.png"></a>
-            <p>3 students</p>
-            <p>200 Wallets</p>
+            <a href="cart.php"><img class="logo-panier" src="assets/img/panier.png"></a>
+            <p><?php echo $item;?> Items</p>
+            <p><?php echo $_SESSION['price_cart'];?> ₳</p>
         </div>
         <div class="clear"></div>
     </div>

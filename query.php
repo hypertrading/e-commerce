@@ -7,7 +7,7 @@ function query_get_one_user($db, $login)
 }
 function query_add_new_student($db, $nom, $img, $price, $lvl, $skill)
 {
-    $query = "INSERT INTO `articles` (`nom`, `img`, `price`, `lvl`, `skill`)
+    $query = "INSERT INTO `articles` (`nom`, `img`, `price`, `lvl`, `skill`) 
                     VALUES ('".$nom."', '".$img."', '".$price."', '".$lvl."', '".$skill."')";
     if (mysqli_query($db, $query))
         return TRUE;
@@ -22,6 +22,12 @@ function query_get_highlight($db)
 function query_get_all_students($db)
 {
     $query = $query = "SELECT * FROM `articles`";
+    $result = mysqli_query($db, $query);
+    return $result;
+}
+function query_get_price($db, $id)
+{
+    $query = "SELECT price FROM `articles` WHERE id =".$id;
     $result = mysqli_query($db, $query);
     return $result;
 }

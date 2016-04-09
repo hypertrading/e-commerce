@@ -37,4 +37,14 @@ function get_all_students()
     }
     return false;
 }
+function get_price($id)
+{
+    if ($db = db_init())
+    {
+        $result = query_get_price($db, $id);
+        $result = mysqli_fetch_assoc($result);
+        return $result;
+    }
+    return false;
+}
 ?>
