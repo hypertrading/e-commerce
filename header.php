@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-    <div>
+    <div class="head">
         <img class="logo" src="assets/img/logo_rent.jpg">
         <button><a href="#">Log-in</a></button>
         <button><a href="#">Register</a></button>
