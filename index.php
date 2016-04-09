@@ -4,7 +4,7 @@ echo '<section class="body">';
 foreach ($hightlight as $student)
 {?>
 	<div class="framestuhome">
-		<div id="framestuhomeimg"><img src="<?php echo $student['img'];?>"></img></div>
+		<img id="framestuhomeimg" src="<?php echo $student['img'];?>"></img>
 		<div class="framestuhomeinfoblock">
 			<div class="framestuhomeinfo"><p><?php echo $student['price'];?>₳</p></div>
 			<div class="framestuhomeinfo"><p><?php echo $student['skill'];?></p></div>
