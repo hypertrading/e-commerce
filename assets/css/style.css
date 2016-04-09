@@ -6,19 +6,61 @@ a:hover{
     color: white;
 }
 header{
-    margin: 0 auto;
-    padding: 0;
+    margin: 1vw auto;
     max-width: 1000px;
 }
+.body{
+	padding: 1vw;
+    margin: 1vw auto;
+	max-width: 1000px;
+	display: block;
+	border: 0.1vw solid black;
+	border-radius: 1vw;
+	background: linear-gradient(to bottom, #01BABA, #2CD57C);
+}
+.framestuhome{
+	padding: 1vw;
+	width: 32vw;
+	height: 48vw;
+	border: 0.1vmin solid black;
+}
+#framestuhomeimg{
+	font-size: 2vw;
+	border: 0.1vw solid black;
+	width: vw;
+	height: 66%;
+	margin-bottom:1vw;
+}
+.framestuhomeinfoblock{
+	height:4vw;
+	border:1px solid black;
+	width:27.3vw;
+	margin-bottom:1vw;
+}
+.framestuhomeinfo{
+	padding: 1vw;
+	font-size: 2vw;
+	border: 0.1vw solid black;
+	width: 11vw;
+	display: inline-block;
+	float:left;
+}
+#framestuhomecart{
+	font-size: 2vw;
+	display: inherit;
+	border: 0.1vw solid black;
+	height: 15%;
+}
 .logo{
-    width: 400px;
-    border-radius: 10px;
+    width: 30vw;
+    border-radius: 1vw;
 }
 .head button{
-    width: 80px;
-    height: 40px;
-    border-radius: 7px;
-    background-color: goldenrod;
+    margin: 0 auto;
+    width: 10vw;
+    height: 3vw;
+    border-radius: 1vw;
+    background-color: #00BABC;
 }
 
 .panier{
@@ -32,22 +74,21 @@ header{
     visibility: hidden;
 }
 nav ul{
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 nav ul li{
     display: inline-block;
     list-style: none;
-    width: 325px;
-    height: 40px;
-    background-color: goldenrod;
+    width: 31vw;
+    height: 4vw;
+    background-color: #00BABC;
     text-align: center;
-    padding-top: 15px;
-    border-radius: 10px;
-    margin: 0 3px 0 0;
+    padding-top: 1vw;
+    border-radius: 1vw;
 }
 nav ul li a{
-    font-size: 20px;
+    font-size: 2vw;
 }
 nav ul li a:hover{
     color: white;
