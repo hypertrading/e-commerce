@@ -1,4 +1,5 @@
 <?php
+include "query.php";
 function db_init()
 {
     $server = "mysql-hypertrading.alwaysdata.net";
@@ -10,4 +11,18 @@ function db_init()
     return ($db);
 }
 
+function get_highlight()
+{
+    if ($db = db_init())
+    {
+        $result = query_get_highlight($db);
+        while ($tmp = mysqli_fetch_assoc($result))
+        {
+            $data[] = $tmp;
+        }
+        return $data;
+    }
+    return false;
+}
+ 
 ?>

@@ -1,28 +1,16 @@
-<?php include ("header.php"); ?>
-<section class="body">
+<?php include ("header.php"); 
+$hightlight = get_highlight();
+echo '<section class="body">';
+foreach ($hightlight as $student)
+{?>
 	<div class="framestuhome">
-		<div id="framestuhomeimg"><img src="https://cdn.intra.42.fr/userprofil/ale-naou.jpg"></img></div>
+		<div id="framestuhomeimg"><img src="<?php echo $student['img'];?>"></img></div>
 		<div class="framestuhomeinfoblock">
-			<div class="framestuhomeinfo"><p>price</p></div>
-			<div class="framestuhomeinfo"><p>lvl</p></div>
+			<div class="framestuhomeinfo"><p><?php echo $student['price'];?>₳</p></div>
+			<div class="framestuhomeinfo"><p><?php echo $student['skill'];?></p></div>
 		</div>
-		<div id="framestuhomecart">Cart</div>
+		<a href="#" id="framestuhomecart">Cart</a>
 	</div>
-	<div class="framestuhome">
-		<div id="framestuhomeimg"><img src="https://cdn.intra.42.fr/userprofil/ale-naou.jpg"></img></div>
-		<div class="framestuhomeinfoblock">
-			<div class="framestuhomeinfo"><p>price</p></div>
-			<div class="framestuhomeinfo"><p>lvl</p></div>
-		</div>
-		<div id="framestuhomecart">Cart</div>
-	</div>
-	<div class="framestuhome">
-		<div id="framestuhomeimg"><img src="https://cdn.intra.42.fr/userprofil/ale-naou.jpg"></img></div>
-		<div class="framestuhomeinfoblock">
-			<div class="framestuhomeinfo"><p>price</p></div>
-			<div class="framestuhomeinfo"><p>lvl</p></div>
-		</div>
-		<div id="framestuhomecart">Cart</div>
-	</div>
+<?}?>
 </section>
 </body>

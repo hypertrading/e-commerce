@@ -15,7 +15,7 @@ $new_user_admin = "INSERT INTO `users` (`firstname`, `lastname`, `passwd`, `droi
 $create_table_articles = "CREATE TABLE articles (
                           id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                           nom VARCHAR(30) NOT NULL,
-                          img VARCHAR(30) NOT NULL,
+                          img VARCHAR(50) NOT NULL,
                           price INT(4) NOT NULL DEFAULT 0,
                           skill INT(2) NOT NULL DEFAULT 0,
                           lang VARCHAR (30))";
@@ -40,7 +40,7 @@ $create_table_articles = "CREATE TABLE articles (
         {
             if (mysqli_query($db, $create_table_articles))
                 echo "Table articles ok<br>";
-            if (add_new_student($db, "Florent Giraud", "https://cdn.intra.42.fr/userprofil/fgiraud.jpg", "5", "6", "C"))
+            if (query_add_new_student($db, "Florent Giraud", "https://cdn.intra.42.fr/userprofil/fgiraud.jpg", "5", "6", "C"))
                 echo "First Student added<br>";
         }
     }
