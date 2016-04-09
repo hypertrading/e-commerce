@@ -1,3 +1,14 @@
+<?php
+session_start();
+include "functions.php";
+if($_SESSION['db'] == NULL)
+{
+    if (!$db = db_init())
+        echo "Failure in connection DB !";
+    else
+        $_SESSION['db'] = $db;
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
