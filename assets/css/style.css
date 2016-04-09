@@ -5,54 +5,24 @@ a{
 a:hover{
     color: white;
 }
-header{
+.body{
+    padding: 1vw;
     margin: 1vw auto;
     max-width: 1000px;
+    display: block;
+    border: 1px solid black;
+    border-radius: 1vw;
+    background: linear-gradient(to bottom, #01BABA, #2CD57C);
 }
-.body{
-	padding: 1vw;
-    margin: 1vw auto;
-	max-width: 1000px;
-	display: block;
-	border: 1px solid black;
-	border-radius: 1vw;
-	background: linear-gradient(to bottom, #01BABA, #2CD57C);
-}
-.framestuhome{
-	padding: 1vw;
-	width: 28vw;
-	height: 48vw;
-	border: 1px solid black;
-	display: inline-block;
-}
-#framestuhomeimg{
-	font-size: 2vw;
-	border: 1px solid black;
-	width: 28vw;
-	height: 32vw;
-	margin-bottom:1vw;
-}
-.framestuhomeinfoblock{
-	height:4vw;
-	border:1px solid black;
-	width:26vw;
-	height: 4.5vw;
-	margin-bottom:1vw;
-	padding: 1vw;
-}
-.framestuhomeinfo{
-	font-size: 2vw;
-	border: 1px solid black;
-	width: 12.5vw;
-	height: 4.5vw;
-	display: inline-block;
-}
-#framestuhomecart{
-	font-size: 2vw;
-	display: inherit;
-	border: 1px solid black;
-	width:28vw;
-	height: 6.5vw;
+
+
+/**
+====  Header
+**/
+header{
+    margin: 0 auto;
+    max-width: 75vw;
+    width: 100%;
 }
 .logo{
     width: 30vw;
@@ -65,7 +35,6 @@ header{
     border-radius: 1vw;
     background-color: #00BABC;
 }
-
 .panier{
     float: right;
 }
@@ -83,7 +52,8 @@ nav ul{
 nav ul li{
     display: inline-block;
     list-style: none;
-    width: 31vw;
+    max-width: 24vw;
+    width: 100%;
     height: 4vw;
     background-color: #00BABC;
     text-align: center;
@@ -95,4 +65,66 @@ nav ul li a{
 }
 nav ul li a:hover{
     color: white;
+}
+
+
+/**
+====  Home
+**/
+.article{
+	max-width: 306px;
+	width: 28vw;
+	border: 1px solid black;
+	display: inline-block;
+}
+.article-img{
+	max-width: 100%;
+	max-height: 100%;
+	margin-left: 4vw;
+	font-size: 2vw;
+	border: 1px solid black;
+	display: block;
+
+}
+.article-footer{
+	width:100%;
+	border:1px solid black;
+	margin-bottom:1vw;
+	display: block;
+}
+.article-footer p{
+	display: inline-block;
+}
+.framestuhomecart{
+	font-size: 2vw;
+	display: block;
+	border: 1px solid black;
+	width: 100%;
+	height: 4vw;
+	text-align: center;
+	padding-top: 1.5vw;
+}
+
+
+/**
+====  All Students
+**/
+.all-students{
+    margin: 0 auto;
+    max-width: 75vw;
+    width: 100%;
+}
+.all-students td{
+    border-right: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+    text-align: center;
+}
+.all-students td:last-child{
+    border-right: none;
+}
+.all-students img{
+    max-width: 60px;
+}
+.all-students p{
+    margin: 0;
 }

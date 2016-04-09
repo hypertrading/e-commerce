@@ -1,13 +1,6 @@
 <?php
 session_start();
 include "functions.php";
-if($_SESSION['db'] == NULL)
-{
-    if (!$db = db_init())
-        echo "Failure in connection DB !";
-    else
-        $_SESSION['db'] = $db;
-}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -32,8 +25,8 @@ if($_SESSION['db'] == NULL)
     </div>
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">All Students</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="all_students.php">All Students</a></li>
             <li><a href="#">Favorite</a></li>
         </ul>
     </nav>

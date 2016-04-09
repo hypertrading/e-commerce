@@ -24,5 +24,17 @@ function get_highlight()
     }
     return false;
 }
- 
+function get_all_students()
+{
+    if ($db = db_init())
+    {
+        $result = query_get_all_students($db);
+        while ($tmp = mysqli_fetch_assoc($result))
+        {
+            $data[] = $tmp;
+        }
+        return $data;
+    }
+    return false;
+}
 ?>

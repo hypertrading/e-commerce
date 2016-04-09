@@ -1,16 +1,18 @@
 <?php include ("header.php"); 
-$hightlight = get_highlight();
+if ($hightlight = get_highlight()){
 echo '<section class="body">';
 foreach ($hightlight as $student)
 {?>
-	<div class="framestuhome">
-		<img id="framestuhomeimg" src="<?php echo $student['img'];?>"></img>
-		<div class="framestuhomeinfoblock">
-			<div class="framestuhomeinfo"><p><?php echo $student['price'];?>₳</p></div>
-			<div class="framestuhomeinfo"><p><?php echo $student['skill'];?></p></div>
+	<div class="article">
+		<img class="article-img" src="<?php echo $student['img'];?>"></img>
+		<div class="article-footer">
+            <p class=""><?php echo $student['nom'];?></p><hr>
+			<p class="">Talents: <?php echo $student['skill'];?></p>
+            <p class="">Level: <?php echo $student['lvl'];?></p>
+            <p class=""><?php echo $student['price'];?> ₳</p>
 		</div>
-		<a href="#" id="framestuhomecart">Cart</a>
+		<a href="#" class="framestuhomecart">Cart</a>
 	</div>
-<?}?>
+<?}}?>
 </section>
 </body>
