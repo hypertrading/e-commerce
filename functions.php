@@ -37,4 +37,11 @@ function get_all_students()
     }
     return false;
 }
+function check_form($str)
+{
+	if ((preg_match("/\w{4,10}/", $str)) == 0)
+		return FALSE;
+	return TRUE;
+
+}
 ?>
