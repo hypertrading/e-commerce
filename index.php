@@ -11,7 +11,7 @@ foreach ($hightlight as $student)
             <p class="">Level: <?php echo $student['lvl'];?></p>
             <p class=""><?php echo $student['price'];?> ₳</p>
 		</div>
-		<a href="cart.php" class="framestuhomecart">Cart</a>
+		<a href="addcart.php?item=<?php echo $student['id'];?>" class="framestuhomecart">Cart</a>
 	</div>
 <?}}?>
 </section>
