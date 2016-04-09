@@ -14,7 +14,7 @@ header{
     margin: 1vw auto;
 	max-width: 1000px;
 	display: block;
-	border: 0.1vw solid black;
+	border: 1px solid black;
 	border-radius: 1vw;
 	background: linear-gradient(to bottom, #01BABA, #2CD57C);
 }
@@ -22,34 +22,36 @@ header{
 	padding: 1vw;
 	width: 32vw;
 	height: 48vw;
-	border: 0.1vmin solid black;
+	border: 1px solid black;
 }
 #framestuhomeimg{
 	font-size: 2vw;
-	border: 0.1vw solid black;
-	width: vw;
-	height: 66%;
+	border: 1px solid black;
+	width: 32vw;
+	height: 32vw;
 	margin-bottom:1vw;
 }
 .framestuhomeinfoblock{
 	height:4vw;
 	border:1px solid black;
-	width:27.3vw;
+	width:30vw;
+	height: 4.5vw;
 	margin-bottom:1vw;
+	padding: 1vw;
 }
 .framestuhomeinfo{
-	padding: 1vw;
 	font-size: 2vw;
-	border: 0.1vw solid black;
-	width: 11vw;
+	border: 1px solid black;
+	width: 14.5vw;
+	height: 4.5vw;
 	display: inline-block;
-	float:left;
 }
 #framestuhomecart{
 	font-size: 2vw;
 	display: inherit;
-	border: 0.1vw solid black;
-	height: 15%;
+	border: 1px solid black;
+	width:32vw;
+	height: 6.5vw;
 }
 .logo{
     width: 30vw;
