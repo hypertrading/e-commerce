@@ -20,21 +20,22 @@ header{
 }
 .framestuhome{
 	padding: 1vw;
-	width: 32vw;
+	width: 28vw;
 	height: 48vw;
 	border: 1px solid black;
+	display: inline-block;
 }
 #framestuhomeimg{
 	font-size: 2vw;
 	border: 1px solid black;
-	width: 32vw;
+	width: 28vw;
 	height: 32vw;
 	margin-bottom:1vw;
 }
 .framestuhomeinfoblock{
 	height:4vw;
 	border:1px solid black;
-	width:30vw;
+	width:26vw;
 	height: 4.5vw;
 	margin-bottom:1vw;
 	padding: 1vw;
@@ -42,7 +43,7 @@ header{
 .framestuhomeinfo{
 	font-size: 2vw;
 	border: 1px solid black;
-	width: 14.5vw;
+	width: 12.5vw;
 	height: 4.5vw;
 	display: inline-block;
 }
@@ -50,7 +51,7 @@ header{
 	font-size: 2vw;
 	display: inherit;
 	border: 1px solid black;
-	width:32vw;
+	width:28vw;
 	height: 6.5vw;
 }
 .logo{
