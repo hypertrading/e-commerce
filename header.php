@@ -4,7 +4,7 @@ include "functions.php";
 if ($_SESSION['nbr_item'] == NULL)
     $item = "Panier vide";
 else
-    $item = $_SESSION['nbr_item'];
+    $item = $_SESSION['nbr_item']." student(s)";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -23,8 +23,8 @@ else
         <a href="register.php"><button>Register</button></a>
         <div class="panier">
             <a href="cart.php"><img class="logo-panier" src="assets/img/panier.png"></a>
-            <p><?php echo $item;?> Items</p>
-            <p><?php echo $_SESSION['price_cart'];?> ₳</p>
+            <p><?php echo $item;?></p>
+            <p><?php echo $_SESSION['price_cart']." ₳";?></p>
         </div>
         <div class="clear"></div>
     </div>

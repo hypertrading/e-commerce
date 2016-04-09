@@ -5,6 +5,12 @@ function query_get_one_user($db, $login)
     $user = mysqli_query($db, $query);
     return $user;
 }
+function query_get_one_student($db, $id)
+{
+    $query = "SELECT * FROM `articles` WHERE id=".$id;
+    $user = mysqli_query($db, $query);
+    return $user;
+}
 function query_add_new_student($db, $nom, $img, $price, $lvl, $skill)
 {
     $query = "INSERT INTO `articles` (`nom`, `img`, `price`, `lvl`, `skill`) 

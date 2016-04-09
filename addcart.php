@@ -9,12 +9,14 @@ if($_GET['item']) {
         $_SESSION['cart'][] = $_GET['item'];
         $_SESSION['nbr_item'] = 1;
         $_SESSION['price_cart'] = $price;
+        header('Location: ' .$_SERVER['HTTP_REFERER']);
     }
     else
     {
         $_SESSION['cart'][] = $_GET['item'];
         $_SESSION['nbr_item'] = $_SESSION['nbr_item'] + 1;
         $_SESSION['price_cart'] = $_SESSION['price_cart'] + $price;
+        header('Location: ' .$_SERVER['HTTP_REFERER']);
     }
 }
 ?>

@@ -54,4 +54,14 @@ function get_price($id)
     }
     return false;
 }
+function get_one_student($id)
+{
+    if ($db = db_init())
+    {
+        $result = query_get_one_student($db, $id);
+        $result = mysqli_fetch_assoc($result);
+        return $result;
+    }
+    return false;
+}
 ?>
