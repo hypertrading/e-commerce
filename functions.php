@@ -50,6 +50,7 @@ function get_price($id)
     {
         $result = query_get_price($db, $id);
         $result = mysqli_fetch_assoc($result);
+        $result = $result['price'];
         return $result;
     }
     return false;

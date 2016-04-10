@@ -13,7 +13,15 @@ if ($_SESSION['cart'] !== NULL) {
             <td><p><?php echo $student['price'];?> ₳</p><a href="rm_one_cart.php?item=<?php echo $student['id'];?>&key=<?php echo $key;?>"><button>Remove from cart</button></a></td>
         </tr>
 <?php
-    }
+    }?>
+<tr>
+    <td class="hidden"></td>
+    <td class="hidden"></td>
+    <td class="hidden"></td>
+    <td class="hidden"></td>
+    <td><p><?php echo $_SESSION['price_cart']."  ₳";?></p><a href="#"><button>Finnish</button></a></td>
+</tr>
+<?php
 }
 else{
     echo "<p>Le panier est vide.</p>";

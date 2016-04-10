@@ -14,6 +14,13 @@ a:hover{
     border-radius: 1vw;
     background: linear-gradient(to bottom, #01BABA, #2CD57C);
 }
+.clear{
+    clear: both;
+    visibility: hidden;
+}
+.hidden{
+    visibility: hidden;
+}
 
 
 /**
@@ -41,10 +48,7 @@ header{
 .logo-panier{
     width: 50px;
 }
-.clear{
-    clear: both;
-    visibility: hidden;
-}
+
 nav ul{
     margin: 0 auto;
     padding: 0;
