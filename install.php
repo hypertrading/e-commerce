@@ -75,12 +75,12 @@ $create_table_items_command = "CREATE TABLE `items_command` (
                               `id_item` int(6) NOT NULL)";
 
 
-$server = "mysql-hypertrading.alwaysdata.net";
+/*$server = "mysql-hypertrading.alwaysdata.net";
 $username = "121422";
-$passwd = "rootme42";
-// $server = "localhost";
-// $username = "root";
-// $passwd = "root";
+$passwd = "rootme42";*/
+$server = "localhost";
+$username = "root";
+$passwd = "root";
 if (!$db = mysqli_connect($server, $username, $passwd))
 {
     echo "Failure in connection database initial !";
