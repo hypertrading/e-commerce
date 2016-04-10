@@ -61,6 +61,16 @@ function query_get_all_students($db)
     $result = mysqli_query($db, $query);
     return $result;
 }
+function query_get_cat_by_student($db, $id)
+{
+    $query = "SELECT  `nom` FROM  `categories` C
+              LEFT JOIN  `article_categorie` AC 
+              ON C.id = AC.id_cat
+              WHERE AC.id_art =".$id;
+    $result = mysqli_query($db, $query);
+    return $result;
+}
+
 
 
 /*
