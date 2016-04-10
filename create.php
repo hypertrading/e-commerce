@@ -15,7 +15,7 @@ else {
 		if (query_get_one_user($db, $_POST['login']))
 		{
 			$_SESSION['msg'] = "User already exist";
-			//header("Location: register.php");
+			header("Location: register.php");
 			exit ();
 		}
 		else

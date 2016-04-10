@@ -65,4 +65,19 @@ function get_one_student($id)
     }
     return false;
 }
+function auth($login, $passwd)
+{
+	if (!$db = db_init()){
+		$_SESSION['msg'] = "DB Unloaded";
+		header("Location: index.php");
+		exit ();
+	}
+	if ($user = query_get_one_user($db, $login))
+	{
+		$passwd = hash("whirlpool", $passwd);
+		if ($passwd == $user['passwd'])
+			return TRUE;
+	}
+	return FALSE;
+}
 ?>

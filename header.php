@@ -23,7 +23,7 @@ else
         <a href="login.php"><button>Log-in</button></a>
         <a href="register.php"><button>Register</button></a>
         <?php }else {?>
-        <a href="#"><?php echo $_SESSION['login']?><button>Se deconnecter</button></a>
+        <a href="logout.php"><?php echo $_SESSION['login']?><button>Se deconnecter</button></a>
         <?php }?>
         <div class="panier">
             <a href="cart.php"><img class="logo-panier" src="assets/img/panier.png"></a>
