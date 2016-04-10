@@ -2,13 +2,13 @@
 include "query.php";
 function db_init()
 {
-    /*$server = "mysql-hypertrading.alwaysdata.net";
+    $server = "mysql-hypertrading.alwaysdata.net";
     $username = "121422";
-    $passwd = "rootme42";*/
+    $passwd = "rootme42";
 
-    $server = "localhost";
-    $username = "root";
-    $passwd = "root";
+    // $server = "localhost";
+    // $username = "root";
+    // $passwd = "root";
 
     $dbname = "hypertrading_rush00";
     if (!$db = mysqli_connect($server, $username, $passwd, $dbname))
@@ -77,7 +77,8 @@ function get_one_student($id)
 }
 function auth($login, $passwd)
 {
-	if (!$db = db_init()){
+	if (!$db = db_init())
+	{
 		$_SESSION['msg'] = "DB Unloaded";
 		header("Location: index.php");
 		exit ();
@@ -86,9 +87,12 @@ function auth($login, $passwd)
 	{
 		$passwd = hash("whirlpool", $passwd);
 		if ($passwd == $user['passwd'])
+		{
 			if ($user['droits'] == 1)
 				$_SESSION['admin'] = 1;
 			return TRUE;
+		}
+		return FALSE;
 	}
 	return FALSE;
 }

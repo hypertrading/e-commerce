@@ -3,7 +3,7 @@ session_start();
 include "functions.php";
 
 $create_table_users = "CREATE TABLE `users` (
-              id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+              id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
               login VARCHAR(30) NOT NULL,
               passwd varchar(255) NOT NULL,
               droits INT(2) NOT NULL DEFAULT 0,
@@ -75,12 +75,12 @@ $create_table_items_command = "CREATE TABLE `items_command` (
                               `id_item` int(6) NOT NULL)";
 
 
-/*$server = "mysql-hypertrading.alwaysdata.net";
+$server = "mysql-hypertrading.alwaysdata.net";
 $username = "121422";
-$passwd = "rootme42";*/
-$server = "localhost";
-$username = "root";
-$passwd = "root";
+$passwd = "rootme42";
+// $server = "localhost";
+// $username = "root";
+// $passwd = "root";
 if (!$db = mysqli_connect($server, $username, $passwd))
 {
     echo "Failure in connection database initial !";

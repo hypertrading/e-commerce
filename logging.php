@@ -18,10 +18,13 @@ if ($_POST['login'] != "" && $_POST['passwd'] != "" && auth($_POST['login'], $_P
 		exit ();
 	}
 	else
-	$_SESSION['msg'] = "Pas de correspondance login et/ou password";
-	header("Location: login.php");
+	{
+		$_SESSION['msg'] = "Wrong Format";
+		header("Location: login.php");
+		exit ();
+	}
 }
-$_SESSION['msg'] = "Wrong Format";
+$_SESSION['msg'] = "Pas de correspondance login et/ou password";
 header("Location: login.php");
 exit ();
 ?>
