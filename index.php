@@ -15,4 +15,4 @@ foreach ($hightlight as $student)
 	</div>
 <?}}?>
 </section>
-</body>
+<?php include "footer.php";
