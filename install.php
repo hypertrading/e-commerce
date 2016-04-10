@@ -16,7 +16,7 @@ $create_table_articles = "CREATE TABLE `articles` (
                           nom VARCHAR(30) NOT NULL,
                           img VARCHAR(50) NOT NULL,
                           price INT(4) NOT NULL DEFAULT 0,
-                          lvl INT(2) NOT NULL DEFAULT 0";
+                          lvl INT(2) NOT NULL DEFAULT 0)";
 $add_default_students = "INSERT INTO `articles` (`nom`, `img`, `price`, `lvl`) VALUES
 ('Florent Giraud', 'https://cdn.intra.42.fr/userprofil/fgiraud.jpg', 5, 6),
 ('Alexis Le Naourese', 'https://cdn.intra.42.fr/userprofil/ale-naou.jpg', 5, 5),
@@ -75,12 +75,12 @@ $create_table_items_command = "CREATE TABLE `items_command` (
                               `id_item` int(6) NOT NULL)";
 
 
-$server = "mysql-hypertrading.alwaysdata.net";
+/*$server = "mysql-hypertrading.alwaysdata.net";
 $username = "121422";
-$passwd = "rootme42";
-/*$server = "localhost";
+$passwd = "rootme42";*/
+$server = "localhost";
 $username = "root";
-$passwd = "root";*/
+$passwd = "root";
 if (!$db = mysqli_connect($server, $username, $passwd))
 {
     echo "Failure in connection database initial !";
@@ -122,7 +122,7 @@ else
             {
                 echo "Table articles ok<br>";
                 if (mysqli_query($db, $add_default_students))
-                    echo "Default Students added<br>";
+                    echo "Default Students ok<br>";
                 else
                     echo "Error creation default students<br>";
             } else
@@ -138,7 +138,7 @@ else
             {
                 echo "Table categories ok<br>";
                 if (mysqli_query($db, $add_default_cat))
-                    echo "Default categories created<br>";
+                    echo "Default categories okbr>";
                 else
                     echo "Error creation default categories<br>";
             }
@@ -155,7 +155,7 @@ else
             {
                 echo "Table article_categorie ok<br>";
                 if (mysqli_query($db, $default_cat_art))
-                    echo "Default art/cat created<br>";
+                    echo "Default liaison art/cat ok<br>";
                 else
                     echo "Error creation default art/cat<br>";
             }

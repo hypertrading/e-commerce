@@ -2,14 +2,15 @@
 include "query.php";
 function db_init()
 {
-    $server = "mysql-hypertrading.alwaysdata.net";
+    /*$server = "mysql-hypertrading.alwaysdata.net";
     $username = "121422";
-    $passwd = "rootme42";
-    $dbname = "hypertrading_rush00";
-    /*$server = "localhost";
+    $passwd = "rootme42";*/
+
+    $server = "localhost";
     $username = "root";
     $passwd = "root";
-    $dbname = "hypertrading_rush00";*/
+
+    $dbname = "hypertrading_rush00";
     if (!$db = mysqli_connect($server, $username, $passwd, $dbname))
         return FALSE;
     return ($db);
