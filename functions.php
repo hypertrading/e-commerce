@@ -6,6 +6,10 @@ function db_init()
     $username = "121422";
     $passwd = "rootme42";
     $dbname = "hypertrading_rush00";
+    /*$server = "localhost";
+    $username = "root";
+    $passwd = "root";
+    $dbname = "hypertrading_rush00";*/
     if (!$db = mysqli_connect($server, $username, $passwd, $dbname))
         return FALSE;
     return ($db);
