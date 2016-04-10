@@ -58,6 +58,7 @@ if($data = invalid_command())
 			<td>By <?php echo $commande['login'] ;?></td>
 			<td>le <?php echo $commande['date'];?></td>
 			<td><a href="valid_command.php?id=<?php echo $commande['id'];?>"><button>Validate</button></a></td>
+			<td><a href="see_command.php?id=<?php echo $commande['id'];?>"><button>See more</button></a></td>
 		</tr>
 <?php }
 	echo "</table>";

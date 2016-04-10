@@ -25,7 +25,7 @@ else
         <?php }else {?>
         <a href="logout.php"><button><?php echo $_SESSION['login']?> veut se deconnecter</button></a>
 		<?php if ($_SESSION['admin'] == 1){?>
-		<a href="admin.php"><button>admin</button></a>
+		<a href="admin.php"><button>Backoffice Admin</button></a>
 		<?php }else {?>
         <a href="profil.php"><button><?php echo $_SESSION['login']?> profil</button></a>
         <?php }}?>
