@@ -53,7 +53,11 @@ function query_add_new_student($db, $nom, $img, $price, $lvl)
     $query = "INSERT INTO `articles` (`nom`, `img`, `price`, `lvl`)
                     VALUES ('".$nom."', '".$img."', '".$price."', '".$lvl."')";
     if (mysqli_query($db, $query))
-        return TRUE;
+    {
+        $result = mysqli_query($db, "SELECT id FROM `articles` ORDER BY `id` DESC LIMIT 1");
+        $result = mysqli_fetch_assoc($result);
+        return $result['id'];
+    }
     return FALSE;
 }
 function query_get_highlight($db)
@@ -70,12 +74,20 @@ function query_get_all_students($db)
 }
 function query_get_cat_by_student($db, $id)
 {
-    $query = "SELECT  `nom` FROM  `categories` C
-              LEFT JOIN  `article_categorie` AC
+    $query = "SELECT `nom` FROM  `categories` C
+              LEFT JOIN  `article_categorie` AC 
               ON C.id = AC.id_cat
               WHERE AC.id_art =".$id;
     $result = mysqli_query($db, $query);
     return $result;
+}
+function query_link_cat_art($db, $id_cat, $id_student)
+{
+    $query = "INSERT INTO `article_categorie` (`id_cat`, `id_art`) 
+              VALUES ('".$id_cat."', '".$id_student."')";
+    if (mysqli_query($db, $query))
+        return TRUE;
+    return FALSE;
 }
 
 

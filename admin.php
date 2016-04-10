@@ -11,13 +11,21 @@ include "header.php"
 		<td>Prix: <input type="text" name="price" placeholder="price" /></td>
 		<td>Niveau: <input type="text" name="lvl" placeholder="lvl" /></td>
 	</tr>
-	<tr><td><ul>
-		<?php $tab = get_all_cat();
-		foreach ($tab as $tmp => $cat)
-		{?>
-		<li><label><?php echo $cat['nom']; ?><input type="checkbox" name="<?php echo $cat['id']?>" /></label></li>
-	<?php }?>
-</ul></td></tr>
+	<tr>
+		<td>
+			<ul>
+				<?php $tab = get_all_cat();
+				foreach ($tab as $tmp => $cat)
+				{?>
+				<li>
+					<label><?php echo $cat['nom']; ?>
+						<input type="checkbox" name="categories[]" value="<?php echo $cat['id']?>">
+					</label>
+				</li>
+				<?php }?>
+			</ul>
+		</td>
+	</tr>
 	<tr>
 		<td><input type="submit" name="submit" value="OK" /></td>
 	</tr>

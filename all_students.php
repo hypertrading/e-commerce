@@ -11,8 +11,14 @@ if ($students = get_all_students())
             <p><?php if($student['cat'])
                 {
                     echo "Skills: ";
-                    foreach ($student['cat'] as $skill)
-                        echo $skill." ";}?>
+                    foreach ($student['cat'] as $tab => $value)
+                    {
+                        if ($tab > 0)
+                            echo ", ";
+                        foreach ($value as $n => $skill)
+                            echo $skill;
+                    }
+                }?>
             </p>
         </td>
         <td><p><?php echo $student['price'];?> ₳</p><a href="addcart.php?item=<?php echo $student['id'];?>"><button>Add to cart</button></a></td>

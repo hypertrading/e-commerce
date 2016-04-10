@@ -36,8 +36,10 @@ function get_all_students()
         while ($tmp = mysqli_fetch_assoc($result))
         {
             $cat = query_get_cat_by_student($db, $tmp['id']);
-            $cat = mysqli_fetch_assoc($cat);
-            $tmp['cat'] = $cat;
+            while ($cat_tmp = mysqli_fetch_assoc($cat))
+            {
+                $tmp['cat'][] = $cat_tmp;
+            }
             $data[] = $tmp;
         }
         return $data;

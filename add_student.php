@@ -13,7 +13,7 @@ if($_POST['nom'] && $_POST['img'] && $_POST['price'] && $_POST['lvl'])
 		header("Location: admin.php");
 		exit ();
 	}
-	if (query_add_new_student($db, $nom, $img, $price, $lvl) == FALSE)
+	if (!$id_new_student = query_add_new_student($db, $nom, $img, $price, $lvl))
 	{
 		$_SESSION['msg'] = "Failed to add student";
 		header("Location: admin.php");
@@ -21,6 +21,14 @@ if($_POST['nom'] && $_POST['img'] && $_POST['price'] && $_POST['lvl'])
 	}
 	else
 	{
+		foreach ($_POST['categories'] as $id_cat)
+		{
+			if(!query_link_cat_art($db, $id_cat, $id_new_student))
+			{
+				$_SESSION['msg'] = "Failed add student (categories trouble)";
+				exit();
+			}
+		}
 		$_SESSION['msg'] = "Student added";
 		header("Location: admin.php");
 		exit ();
