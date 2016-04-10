@@ -3,6 +3,7 @@ function query_get_one_user($db, $login)
 {
     $query = "SELECT * FROM `users` WHERE login='".$login."'";
     $result = mysqli_query($db, $query);
+    $result = mysqli_fetch_assoc($result);
 	return $result;
 }
 function query_get_one_student($db, $id)
