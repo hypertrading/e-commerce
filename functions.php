@@ -110,4 +110,19 @@ function send_cart($cart, $login)
     }
     return FALSE;
 }
+function invalid_command()
+{
+    if ($db = db_init())
+    {
+        $result = query_get_invalid_command($db);
+        if(mysqli_num_rows($result) > 0) {
+            while ($tmp = mysqli_fetch_assoc($result))
+            {
+                $data[] = $tmp;
+            }
+            return $data;
+        }
+    }
+    return FALSE;
+}
 ?>

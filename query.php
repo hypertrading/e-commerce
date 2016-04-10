@@ -104,4 +104,13 @@ function query_link_item_command($db, $id_command, $cart)
     }
     return TRUE;
 }
+function query_get_invalid_command($db)
+{
+    $query = "SELECT * FROM  `commands` WHERE  `status`=0";
+    if ($result = mysqli_query($db, $query))
+    {
+        return $result; 
+    }
+    return FALSE;
+}
 ?>

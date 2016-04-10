@@ -1,6 +1,7 @@
 <?php
 include "header.php"
 ?>
+<hr>
 <table>
 	<tr>
 		Add student
@@ -22,7 +23,7 @@ include "header.php"
 	</tr>
 	</form>
 </table>
-<br />
+<hr>
 <table>
 	<td>Create categorie
 		<form method="post" action="add_categorie.php">
@@ -37,3 +38,24 @@ include "header.php"
 		</form>
 	</td>
 </table>
+<hr>
+<?php
+if($data = invalid_command())
+{
+	echo "<table>";
+	foreach ($data as $commmande)
+	{ ?>
+		<tr>
+			<td>Commande N<?php echo $commmande['id'];?></td>
+			<td>By <?php echo $commmande['login'] ;?></td>
+			<td>le <?php echo $commmande['date'];?></td>
+			<td><a href="#"><button>Validate</button></a></td>
+		</tr>
+<?php }
+	echo "</table>";
+}
+else
+{
+	echo "aucune commande :(";
+}
+?>
