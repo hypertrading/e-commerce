@@ -19,7 +19,7 @@ else
 <header>
     <div class="head">
         <img class="logo" src="assets/img/logo_rent.jpg">
-        <button><a href="#">Log-in</a></button>
+        <a href="login.php"><button>Log-in</button></a>
         <a href="register.php"><button>Register</button></a>
         <div class="panier">
             <a href="cart.php"><img class="logo-panier" src="assets/img/panier.png"></a>
