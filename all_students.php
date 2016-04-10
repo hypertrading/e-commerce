@@ -21,7 +21,17 @@ if ($students = get_all_students())
                 }?>
             </p>
         </td>
-        <td><p><?php echo $student['price'];?> ₳</p><a href="addcart.php?item=<?php echo $student['id'];?>"><button>Add to cart</button></a></td>
+        <td>
+		<?php if ($_SESSION[admin] == 1){ ?>
+			<p><?php echo $student['price'];?> ₳</p>
+			<a href="del_article.php?item=<?php echo $student['id'];?>">
+			<button>Delete article</button></a>
+			<?php } else { ?>
+			<p><?php echo $student['price'];?> ₳</p>
+			<a href="addcart.php?item=<?php echo $student['id'];?>">
+			<button>Add to cart</button></a>
+			<?php } ?>
+		</td>
     </tr>
 <?php }
 } ?>

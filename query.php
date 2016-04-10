@@ -44,9 +44,16 @@ function query_del_user($db, $login)
  */
 function query_get_one_student($db, $id)
 {
-    $query = "SELECT * FROM `articles` WHERE id=".$id;
-    $user = mysqli_query($db, $query);
-    return $user;
+    $query = "SELECT * FROM `articles` WHERE id='".$id."'";
+	$user = mysqli_query($db, $query);
+	return $user;
+}
+function query_del_one_student($db, $id)
+{
+    $query = "DELETE FROM `articles` WHERE id='".$id."'";
+    if (mysqli_query($db, $query))
+		return TRUE;
+    return FALSE;
 }
 function query_add_new_student($db, $nom, $img, $price, $lvl)
 {
@@ -75,7 +82,7 @@ function query_get_all_students($db)
 function query_get_cat_by_student($db, $id)
 {
     $query = "SELECT `nom` FROM  `categories` C
-              LEFT JOIN  `article_categorie` AC 
+              LEFT JOIN  `article_categorie` AC
               ON C.id = AC.id_cat
               WHERE AC.id_art =".$id;
     $result = mysqli_query($db, $query);
@@ -83,7 +90,7 @@ function query_get_cat_by_student($db, $id)
 }
 function query_link_cat_art($db, $id_cat, $id_student)
 {
-    $query = "INSERT INTO `article_categorie` (`id_cat`, `id_art`) 
+    $query = "INSERT INTO `article_categorie` (`id_cat`, `id_art`)
               VALUES ('".$id_cat."', '".$id_student."')";
     if (mysqli_query($db, $query))
         return TRUE;

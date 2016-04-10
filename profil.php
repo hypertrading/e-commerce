@@ -16,7 +16,7 @@ include "header.php";
 			<td>Unregister</td>
 			<form method="post" action="unregister.php">
 			<td>MdP: <input type="text" name="passwd" placeholder="Password"/></td>
-			<td>Valider: <input type="checkbox" name="check"/></td>
+			<td>Valider: <input type="checkbox" name="check" value="1"/></td>
 			<td><input type="submit" name="submit" value="OK" /></td>
 			</form>
 		</tr>
