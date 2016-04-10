@@ -99,4 +99,8 @@ function get_all_cat()
     }
     return false;
 }
+function send_cart()
+{
+    
+}
 ?>

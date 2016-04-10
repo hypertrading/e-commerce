@@ -19,7 +19,7 @@ if ($_SESSION['cart'] !== NULL) {
     <td class="hidden"></td>
     <td class="hidden"></td>
     <td class="hidden"></td>
-    <td><p><?php echo $_SESSION['price_cart']."  ₳";?></p><a href="#"><button>Finnish</button></a></td>
+    <td><p><?php echo $_SESSION['price_cart']."  ₳";?></p><a href="valid_cart.php"><button>Finnish</button></a></td>
 </tr>
 <?php
 }
