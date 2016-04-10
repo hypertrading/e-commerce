@@ -4,7 +4,7 @@ include "header.php"
 <table>
 	<tr>
 		Add student
-		<form method="post" action="logging.php">
+		<form method="post" action="add_student.php">
 		<td>Nom: <input type="text" name="nom" placeholder="name"/></td>
 		<td>Photo: <input type="text" name="img" placeholder="link" /></td>
 		<td>Prix: <input type="text" name="price" placeholder="price" /></td>

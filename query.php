@@ -28,10 +28,10 @@ function query_get_one_student($db, $id)
     $user = mysqli_query($db, $query);
     return $user;
 }
-function query_add_new_student($db, $nom, $img, $price, $lvl, $skill)
+function query_add_new_student($db, $nom, $img, $price, $lvl)
 {
-    $query = "INSERT INTO `articles` (`nom`, `img`, `price`, `lvl`, `skill`)
-                    VALUES ('".$nom."', '".$img."', '".$price."', '".$lvl."', '".$skill."')";
+    $query = "INSERT INTO `articles` (`nom`, `img`, `price`, `lvl`)
+                    VALUES ('".$nom."', '".$img."', '".$price."', '".$lvl."')";
     if (mysqli_query($db, $query))
         return TRUE;
     return FALSE;
