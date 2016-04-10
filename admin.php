@@ -22,10 +22,18 @@ include "header.php"
 	</tr>
 	</form>
 </table>
+<br />
 <table>
-		Create categorie
-		<form method="post" action=".php">
-		<td>Nom: <input type="text" name="cat" placeholder="skill"/></td>
-		<td><input type="submit" name="submit" value="OK" /></td>
+	<td>Create categorie
+		<form method="post" action="add_categorie.php">
+		Categorie: <input type="text" name="cat" placeholder="skill"/>
+		<input type="submit" name="submit" value="OK" />
 		</form>
+	</td>
+	<td>Destroy categorie
+		<form method="post" action="del_categorie.php">
+		Categorie: <input type="text" name="cat" placeholder="skill"/>
+		<input type="submit" name="submit" value="OK" />
+		</form>
+	</td>
 </table>

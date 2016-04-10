@@ -55,7 +55,14 @@ function query_get_all_students($db)
  */
 function query_add_categorie($db, $nom)
 {
-    $query = "INSERT INTO `categories` (`nom`) VALUES ('".$nom."')";
+	$query = "INSERT INTO `categories` (`nom`) VALUES ('".$nom."')";
+    if (mysqli_query($db, $query))
+        return TRUE;
+    return FALSE;
+}
+function query_del_categorie($db, $nom)
+{
+    $query = "DELETE FROM `categories` WHERE nom='".$nom."'";
     if (mysqli_query($db, $query))
         return TRUE;
     return FALSE;
