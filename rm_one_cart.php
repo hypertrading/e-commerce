@@ -3,7 +3,6 @@ session_start();
 include "functions.php";
 if($_GET['item']) {
     $price = get_price($_GET['item']);
-    $price = $price['price'];
     if ($_SESSION['cart'] != NULL)
     {
         array_splice($_SESSION['cart'], $_GET['key'], 1);

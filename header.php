@@ -36,3 +36,10 @@ else
         </ul>
     </nav>
 </header>
+<?php
+if ($_SESSION['msg'] != NULL)
+{
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
+}
+?>
