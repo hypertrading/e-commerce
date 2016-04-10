@@ -39,7 +39,7 @@ function get_all_students()
 }
 function check_form($str)
 {
-	if (preg_match("/^\w{4,16}&/", $str) == 0)
+	if (preg_match("/^\w{4,16}$/", $str) == 0)
 		return FALSE;
 	return TRUE;
 

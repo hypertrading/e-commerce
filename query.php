@@ -1,9 +1,8 @@
 <?php
 function query_get_one_user($db, $login)
 {
-    $query = "SELECT * FROM `users` WHERE `login` =".$login;
-    $user = mysqli_query($db, $query);
-    return $user;
+    $query = "SELECT * FROM `users` WHERE `login`=".$login;
+    return mysqli_query($db, $query);
 }
 function query_get_one_student($db, $id)
 {
@@ -13,7 +12,7 @@ function query_get_one_student($db, $id)
 }
 function query_add_new_student($db, $nom, $img, $price, $lvl, $skill)
 {
-    $query = "INSERT INTO `articles` (`nom`, `img`, `price`, `lvl`, `skill`) 
+    $query = "INSERT INTO `articles` (`nom`, `img`, `price`, `lvl`, `skill`)
                     VALUES ('".$nom."', '".$img."', '".$price."', '".$lvl."', '".$skill."')";
     if (mysqli_query($db, $query))
         return TRUE;
