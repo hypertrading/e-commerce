@@ -24,6 +24,8 @@ else
         <a href="register.php"><button>Register</button></a>
         <?php }else {?>
         <a href="logout.php"><button><?php echo $_SESSION['login']?> veut se deconnecter</button></a>
+		<?php if ($_SESSION['admin'] == 1){?>
+		<a href="admin.php"><button>admin</button></a><?php }?>
         <?php }?>
         <div class="panier">
             <a href="cart.php"><img class="logo-panier" src="assets/img/panier.png"></a>

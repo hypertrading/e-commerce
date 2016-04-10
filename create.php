@@ -28,7 +28,7 @@ else {
 				exit ();
 			}
 			$_SESSION['msg'] = "SUCCESS";
-			header("Location: index.php");
+			header("Location: login.php");
 			exit ();
 		}
 	}
