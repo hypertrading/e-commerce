@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "functions.php";
-if($_POST[oldpw] != NULL && $_POST[newpw] != NULL)
+if($_POST['oldpw'] != NULL && $_POST['newpw'] != NULL)
 {
     if (!$db = db_init())
 	{
@@ -9,25 +9,34 @@ if($_POST[oldpw] != NULL && $_POST[newpw] != NULL)
 		header("Location: profil.php");
 		exit ();
 	}
-	if (query_check_oldpw($db, $_POST[oldpw]) == FALSE)
+	if (($db_oldpw = query_check_oldpw($db, $_SESSION['login'])) == FALSE)
 	{
-		$_SESSION['msg'] = "Wrong Password";
-		header("Location: profil.php");
+		$_SESSION['msg'] = "Unable to get oldpw from DB. Please try again later";
+		header("Location: index.php");
 		exit ();
 	}
 	else
 	{
-		if (query_modify_passwd($db, $_POST[newpw]) == FALSE)
+		if ($db_oldpw != hash("whirlpool", $_POST['oldpw']))
 		{
-			$_SESSION['msg'] = "Unabled to modify password. Please try again later";
-			header("Location: index.php");
+			$_SESSION['msg'] = "Wrong Password";
+			header("Location: profil.php");
 			exit ();
 		}
 		else
 		{
-			$_SESSION['msg'] = "Password Modified";
-			header("Location: index.php");
-			exit ();
+			if (query_modify_passwd($db, $_POST['login'], hash("whirlpool", $_POST['newpw'])) == FALSE)
+			{
+				$_SESSION['msg'] = "Unabled to modify password. Please try again later";
+				header("Location: index.php");
+				exit ();
+			}
+			else
+			{
+				$_SESSION['msg'] = "Password Modified";
+				header("Location: index.php");
+				exit ();
+			}
 		}
 	}
 }

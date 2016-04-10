@@ -17,7 +17,20 @@ function query_add_new_user($db, $login, $passwd)
         return TRUE;
     return FALSE;
 }
-
+function query_check_oldpw($db, $login)
+{
+	$query = "SELECT `passwd` FROM `users` WHERE login='".$login."'";
+	if (mysqli_query($db, $query))
+        return TRUE;
+    return FALSE;
+}
+function query_modify_passwd($db, $login, $newpw)
+{
+	$query = "UPDATE `users` SET passwd='".$newpw."' WHERE login='".$login."'";
+	if (mysqli_query($db, $query))
+		return TRUE;
+	return FALSE;
+}
 
 /*
  * Requetes students
@@ -109,7 +122,7 @@ function query_get_invalid_command($db)
     $query = "SELECT * FROM  `commands` WHERE  `status`=0";
     if ($result = mysqli_query($db, $query))
     {
-        return $result; 
+        return $result;
     }
     return FALSE;
 }
