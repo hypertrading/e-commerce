@@ -1,8 +1,9 @@
 <?php
 function query_get_one_user($db, $login)
 {
-    $query = "SELECT * FROM `users` WHERE `login`=".$login;
-    return mysqli_query($db, $query);
+    $query = "SELECT * FROM `users` WHERE login='".$login."'";
+    $result = mysqli_query($db, $query);
+	return $result;
 }
 function query_get_one_student($db, $id)
 {
