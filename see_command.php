@@ -23,7 +23,7 @@ else
 }
 ?>
 <section class="body">
-    <h3>Recaptitulatif</h3>
+    <h3>Summary</h3>
     <h4><?php echo $data[0]['login']." a commande le ".$data[0]['date'];?></h4>
     <table class='all-students'>
         <?php
@@ -41,7 +41,7 @@ else
         }
         ?>
     </table>
-    <a href="admin.php"><button>Retour</button></a>
+    <a href="admin.php"><button>Back</button></a>
     <a href="valid_command.php?id=<?php echo $data[0]['id'];?>"><button>Validate</button></a>
 
 </section>

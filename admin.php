@@ -65,7 +65,7 @@ if($data = invalid_command())
 }
 else
 {
-	echo "aucune commande :(";
+	echo "No order pending :(";
 }
 ?>
 </section>

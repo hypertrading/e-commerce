@@ -75,7 +75,7 @@ function query_get_highlight($db)
 }
 function query_get_all_students($db)
 {
-    $query = $query = "SELECT * FROM `articles`";
+    $query = $query = "SELECT * FROM `articles` ORDER BY id DESC";
     $result = mysqli_query($db, $query);
     return $result;
 }

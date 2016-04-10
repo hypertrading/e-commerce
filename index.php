@@ -12,6 +12,6 @@ foreach ($hightlight as $student)
 		</div>
 		<a href="addcart.php?item=<?php echo $student['id'];?>" class="framestuhomecart">Cart</a>
 	</div>
-<?}}?>
+<? }}?>
 </section>
 <?php include "footer.php";
