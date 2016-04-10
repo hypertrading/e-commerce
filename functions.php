@@ -86,4 +86,17 @@ function auth($login, $passwd)
 	}
 	return FALSE;
 }
+function get_all_cat()
+{
+    if ($db = db_init())
+    {
+        $result = query_get_all_cat($db);
+        while ($tmp = mysqli_fetch_assoc($result))
+        {
+            $data[] = $tmp;
+        }
+        return $data;
+    }
+    return false;
+}
 ?>
