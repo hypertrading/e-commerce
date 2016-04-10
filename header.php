@@ -25,8 +25,10 @@ else
         <?php }else {?>
         <a href="logout.php"><button><?php echo $_SESSION['login']?> veut se deconnecter</button></a>
 		<?php if ($_SESSION['admin'] == 1){?>
-		<a href="admin.php"><button>admin</button></a><?php }?>
-        <?php }?>
+		<a href="admin.php"><button>admin</button></a>
+		<?php }else {?>
+        <a href="profil.php"><button><?php echo $_SESSION['login']?> profil</button></a>
+        <?php }}?>
         <div class="panier">
             <a href="cart.php"><img class="logo-panier" src="assets/img/panier.png"></a>
             <p><?php echo $item;?></p>
