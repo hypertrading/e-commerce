@@ -99,8 +99,15 @@ function get_all_cat()
     }
     return false;
 }
-function send_cart()
+function send_cart($cart, $login)
 {
-    
+    if ($db = db_init())
+    {
+        $id_command = query_new_command($db, $login);
+        $id_command = mysqli_fetch_assoc($id_command);
+        query_link_item_command($db, $id_command['id'], $cart);
+        return TRUE;
+    }
+    return FALSE;
 }
 ?>

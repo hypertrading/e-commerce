@@ -84,4 +84,24 @@ function query_get_price($db, $id)
     $result = mysqli_query($db, $query);
     return $result;
 }
+function query_new_command($db, $login)
+{
+    $query = "INSERT INTO `commands` (`login`) VALUES ('".$login."')";
+    if (mysqli_query($db, $query))
+    {
+        $result = mysqli_query($db, "SELECT id FROM `commands` WHERE login='".$login."' ORDER BY `date` DESC LIMIT 1");
+        return $result;
+    }
+    return FALSE;
+}
+function query_link_item_command($db, $id_command, $cart)
+{
+    foreach ($cart as $id_item)
+    {
+        $query = "INSERT INTO `items_command` (`id_command`, `id_item`) VALUES ('".$id_command."', '".$id_item."')";
+        if (!mysqli_query($db, $query))
+            return FALSE;
+    }
+    return TRUE;
+}
 ?>
