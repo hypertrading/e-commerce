@@ -1,11 +1,15 @@
-body{
-    background: url("../img/background.jpg");
+body
+{
+    background: url("../img/background.jpg") fixed;
 }
 a{
     text-decoration: none;
     color: black;
 }
 a:hover{
+    color: white;
+}
+.head a button:hover{
     color: white;
 }
 .body{
@@ -15,7 +19,8 @@ a:hover{
     display: block;
     border: 1px solid black;
     border-radius: 1vw;
-    background: linear-gradient(to bottom, #01BABA, #2CD57C);
+    background: url("https://profile.intra.42.fr/assets/background_login-a4e0666f73c02f025f590b474b394fd86e1cae20e95261a6e4862c2d0faa1b04.jpg") left bottom;
+    /*background: linear-gradient(to bottom, #01BABA, #2CD57C);*/
 }
 .clear{
     clear: both;
@@ -47,7 +52,7 @@ header{
     width: 10vw;
     height: 3vw;
     border-radius: 1vw;
-    background-color: #00BABC;
+    background: url("https://profile.intra.42.fr/assets/background_login-a4e0666f73c02f025f590b474b394fd86e1cae20e95261a6e4862c2d0faa1b04.jpg") left bottom;
 }
 .panier{
     float: right;
@@ -66,7 +71,7 @@ nav ul li{
     max-width: 24vw;
     width: 100%;
     height: 4vw;
-    background-color: #00BABC;
+    background:url("https://profile.intra.42.fr/assets/background_login-a4e0666f73c02f025f590b474b394fd86e1cae20e95261a6e4862c2d0faa1b04.jpg") left center;
     text-align: center;
     padding-top: 1vw;
     border-radius: 1vw;

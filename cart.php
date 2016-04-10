@@ -24,6 +24,6 @@ if ($_SESSION['cart'] !== NULL) {
 <?php
 }
 else{
-    echo "<p>Le panier est vide.</p>";
+    echo "<div class='msg'><p>Le panier est vide.</p></div>";
 }
 ?>
