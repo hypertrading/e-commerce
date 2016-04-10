@@ -5,6 +5,7 @@ if ($_SESSION['nbr_item'] == NULL)
     $item = "Panier vide";
 else
     $item = $_SESSION['nbr_item']." student(s)";
+$categories = get_all_cat();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -37,10 +38,17 @@ else
         <div class="clear"></div>
     </div>
     <nav>
-        <ul>
+        <ul id="menu-deroulant">
             <li><a href="index.php">Home</a></li>
             <li><a href="all_students.php">All Students</a></li>
-            <li><a href="#">Favorite</a></li>
+            <li><a href="#">Categories</a>
+                <ul>
+                    <?php foreach ($categories as $categorie) {
+                        echo "<li><a href='categorie.php?id=".$categorie['id']."'>".$categorie['nom']."</a></li>";
+                    }
+                    ?>
+                </ul>
+            </li>
         </ul>
     </nav>
 </header>

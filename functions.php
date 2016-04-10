@@ -15,7 +15,6 @@ function db_init()
         return FALSE;
     return ($db);
 }
-
 function get_highlight()
 {
     if ($db = db_init())
@@ -128,6 +127,26 @@ function invalid_command()
         if(mysqli_num_rows($result) > 0) {
             while ($tmp = mysqli_fetch_assoc($result))
             {
+                $data[] = $tmp;
+            }
+            return $data;
+        }
+    }
+    return FALSE;
+}
+function get_student_by_cat($cat_id)
+{
+    if ($db = db_init())
+    {
+        $result = query_get_student_by_cat($db, $cat_id);
+        if(mysqli_num_rows($result) > 0) {
+            while ($tmp = mysqli_fetch_assoc($result))
+            {
+                $cat = query_get_cat_by_student($db, $tmp['id']);
+                while ($cat_tmp = mysqli_fetch_assoc($cat))
+                {
+                    $tmp['cat'][] = $cat_tmp;
+                }
                 $data[] = $tmp;
             }
             return $data;

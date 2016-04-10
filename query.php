@@ -96,6 +96,15 @@ function query_link_cat_art($db, $id_cat, $id_student)
         return TRUE;
     return FALSE;
 }
+function query_get_student_by_cat($db, $id)
+{
+    $query = "SELECT * FROM  `articles` A
+              LEFT JOIN  `article_categorie` AC
+              ON A.id = AC.id_art
+              WHERE AC.id_cat =".$id;
+    $result = mysqli_query($db, $query);
+    return $result;
+}
 
 
 
