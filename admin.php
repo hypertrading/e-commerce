@@ -43,13 +43,13 @@ include "header.php"
 if($data = invalid_command())
 {
 	echo "<table>";
-	foreach ($data as $commmande)
+	foreach ($data as $commande)
 	{ ?>
 		<tr>
-			<td>Commande N<?php echo $commmande['id'];?></td>
-			<td>By <?php echo $commmande['login'] ;?></td>
-			<td>le <?php echo $commmande['date'];?></td>
-			<td><a href="#"><button>Validate</button></a></td>
+			<td>Commande N<?php echo $commande['id'];?></td>
+			<td>By <?php echo $commande['login'] ;?></td>
+			<td>le <?php echo $commande['date'];?></td>
+			<td><a href="valid_command.php?id=<?php echo $commande['id'];?>"><button>Validate</button></a></td>
 		</tr>
 <?php }
 	echo "</table>";
