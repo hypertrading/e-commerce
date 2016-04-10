@@ -20,16 +20,23 @@ function query_add_new_user($db, $login, $passwd)
 function query_check_oldpw($db, $login)
 {
 	$query = "SELECT `passwd` FROM `users` WHERE login='".$login."'";
-	if (mysqli_query($db, $query))
-        return TRUE;
-    return FALSE;
+	$result = mysqli_query($db, $query);
+	$result = mysqli_fetch_assoc($result);
+    return $result;
 }
 function query_modify_passwd($db, $login, $newpw)
 {
-	$query = "UPDATE `users` SET passwd='".$newpw."' WHERE login='".$login."'";
+	$query = "UPDATE `users` SET `passwd`='".$newpw."' WHERE `login`='".$login."'";
 	if (mysqli_query($db, $query))
 		return TRUE;
 	return FALSE;
+}
+function query_del_user($db, $login)
+{
+    $query = "DELETE FROM `users` WHERE login='".$login."'";
+    if (mysqli_query($db, $query))
+        return TRUE;
+    return FALSE;
 }
 
 /*
@@ -64,7 +71,7 @@ function query_get_all_students($db)
 function query_get_cat_by_student($db, $id)
 {
     $query = "SELECT  `nom` FROM  `categories` C
-              LEFT JOIN  `article_categorie` AC 
+              LEFT JOIN  `article_categorie` AC
               ON C.id = AC.id_cat
               WHERE AC.id_art =".$id;
     $result = mysqli_query($db, $query);
