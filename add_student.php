@@ -34,7 +34,7 @@ if($_POST['nom'] && $_POST['img'] && $_POST['price'] && $_POST['lvl'])
 		exit ();
 	}
 }
-$_SESSION['msg'] = "Champ(s) non rempli(s)";
+$_SESSION['msg'] = "Unfilled form(s)";
 header("Location: admin.php");
 exit ();
 ?>
