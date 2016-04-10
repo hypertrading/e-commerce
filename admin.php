@@ -1,7 +1,7 @@
 <?php
 include "header.php"
 ?>
-<hr>
+<section class="body">
 <table>
 	<tr>
 		Add student
@@ -59,3 +59,4 @@ else
 	echo "aucune commande :(";
 }
 ?>
+</section>
