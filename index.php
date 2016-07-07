@@ -2,16 +2,17 @@
 if ($hightlight = get_highlight()){
 echo '<section class="body">';
 foreach ($hightlight as $student)
-{?>
+{ ?>
 	<div class="article">
-		<img class="article-img" src="<?php echo $student['img'];?>"></img>
+		<img class="article-img" src="<?= $student['img'];?>"></img>
 		<div class="article-footer">
-            <p class=""><?php echo $student['nom'];?></p>
-            <p class="">Level: <?php echo $student['lvl'];?></p>
-            <p class=""><?php echo $student['price'];?> ₳</p>
+            <p class=""><?= $student['nom'];?></p>
+            <p class="">Level: <?= $student['lvl'];?></p>
+            <p class=""><?= $student['price'];?> ₳</p>
 		</div>
-		<a href="addcart.php?item=<?php echo $student['id'];?>" class="framestuhomecart">Cart</a>
+		<a href="addcart.php?item=<?= $student['id'];?>" class="framestuhomecart">Cart</a>
 	</div>
-<? }}?>
+<?php } } ?>
 </section>
-<?php include "footer.php";
+<?php include ("footer.php"); ?>
+

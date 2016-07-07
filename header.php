@@ -1,8 +1,10 @@
 <?php
 session_start();
 include "functions.php";
-if ($_SESSION['nbr_item'] == NULL)
+if (!isset($_SESSION['nbr_item']) || $_SESSION['nbr_item'] == NULL){
+    $_SESSION['price_cart'] = 0;
     $item = "Panier vide";
+}
 else
     $item = $_SESSION['nbr_item']." student(s)";
 $categories = get_all_cat();
@@ -20,7 +22,7 @@ $categories = get_all_cat();
 <header>
     <div class="head">
         <img class="logo" src="assets/img/logo_rent.jpg">
-        <?php if ($_SESSION['login'] == NULL){?>
+        <?php if (!isset($_SESSION['login']) || $_SESSION['login'] == NULL){?>
         <a href="login.php"><button>Log-in</button></a>
         <a href="register.php"><button>Register</button></a>
         <?php }else {?>
@@ -53,7 +55,7 @@ $categories = get_all_cat();
     </nav>
 </header>
 <?php
-if ($_SESSION['msg'] != NULL)
+if (isset($_SESSION['msg']) && $_SESSION['msg'] != NULL)
 {
     echo "<div class='msg'><p>";
     echo $_SESSION['msg'];
